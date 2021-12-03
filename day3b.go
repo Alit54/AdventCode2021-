@@ -21,7 +21,6 @@ func main() {
 	for i := 0; i < len(input); i++ {
 		mapp[int(input[i][0])-48]++
 	}
-	//fmt.Println(mapp)
 	// First divider
 	if mapp[0] > mapp[1] {
 		for i := 0; i < len(input); i++ {
@@ -40,11 +39,8 @@ func main() {
 			}
 		}
 	}
-	//fmt.Println(len(oxigen), len(carbon))
 	for i := 1; i < 12; i++ {
 		oxigen = CalcO(oxigen, i)
-	}
-	for i := 1; i < 12; i++ {
 		carbon = CalcC(carbon, i)
 	}
 	// conversion
@@ -65,8 +61,6 @@ func CalcO(input []string, n int) []string {
 	for i := 0; i < len(input); i++ {
 		mapp[int(input[i][n])-48]++
 	}
-	//fmt.Println(mapp)
-	// First divider
 	if mapp[0] > mapp[1] {
 		for i := 0; i < len(input); i++ {
 			if input[i][n] == '0' {
@@ -92,8 +86,6 @@ func CalcC(input []string, n int) []string {
 	for i := 0; i < len(input); i++ {
 		mapp[int(input[i][n])-48]++
 	}
-	//fmt.Println(mapp)
-	// First divider
 	if mapp[0] > mapp[1] {
 		for i := 0; i < len(input); i++ {
 			if input[i][n] == '1' {
