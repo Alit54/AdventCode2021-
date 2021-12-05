@@ -44,8 +44,6 @@ func main() {
 		p.y = n
 		p2 = append(p2, p)
 	}
-	// check the horizontal and vertical lines
-	// p1, p2 = checkLines(p1, p2) <! No sense function for our need !>
 	// increase the table's dots in which there is a lines
 	table = increase(p1, p2, table)
 	// check in how many positions there is a >=2 number
@@ -86,7 +84,6 @@ func increase(p1 []position, p2 []position, table [1000][1000]int) [1000][1000]i
 		}
 		if p1[i].y < p2[i].y {
 			// 7,7 -> 8,8 -> 9,9
-			// 7,8 -> 8,9 -> 9,10
 			k := p1[i].y
 			for j := p1[i].x; j <= p2[i].x; j++ {
 				table[j][k]++
@@ -103,16 +100,4 @@ func increase(p1 []position, p2 []position, table [1000][1000]int) [1000][1000]i
 		}
 	}
 	return table
-}
-
-func checkLines(p1 []position, p2 []position) ([]position, []position) {
-	// This function takes the slices and returns only the lines in which there is an horizontal or vertical movement
-	var np1, np2 []position
-	for i := 0; i < len(p1); i++ {
-		if p1[i].x == p2[i].x || p1[i].y == p2[i].y {
-			np1 = append(np1, p1[i])
-			np2 = append(np2, p2[i])
-		}
-	}
-	return np1, np2
 }

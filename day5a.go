@@ -68,7 +68,6 @@ func increase(p1 []position, p2 []position, table [1000][1000]int) [1000][1000]i
 			max = int(math.Max(float64(p1[i].y), float64(p2[i].y)))
 			for j := min; j <= max; j++ {
 				table[p1[i].x][j]++
-				/* fmt.Println(i, "Sono in Horizontal", table[p1[i].x][j]) */
 			}
 		}
 		// vertical movement
@@ -77,7 +76,6 @@ func increase(p1 []position, p2 []position, table [1000][1000]int) [1000][1000]i
 			max = int(math.Max(float64(p1[i].x), float64(p2[i].x)))
 			for j := min; j <= max; j++ {
 				table[j][p1[i].y]++
-				/* fmt.Println(i, "Sono in vertical", table[j][p1[i].y]) */
 			}
 		}
 	}
